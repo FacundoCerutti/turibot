@@ -55,7 +55,7 @@ namespace TuriBoBot.Dialogs
             {
                 name = activity.Text;
                 await context.PostAsync("Hola " + name);
-                await context.PostAsync("Cuantos años tienes?");
+                await context.PostAsync("Cuantos años tenes?");
                 control = 0;
                 context.Wait(MessageAgeReceived);
             }
