@@ -40,14 +40,14 @@ namespace TuriBoBot.Dialogs
             return Task.CompletedTask;
         }
         
-        private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
+        public async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
             await context.PostAsync("Hola, soy Turibot, espero poder ayudarte con el destino para tus vacaciones, como te llamas?");
             context.Wait(MessageNameReceived);
         }
 
-        private async Task MessageNameReceived(IDialogContext context, IAwaitable<object> result)
+        public async Task MessageNameReceived(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
             control = Controlar(activity.Text);            
@@ -92,7 +92,7 @@ namespace TuriBoBot.Dialogs
             }
         }      
 
-        private async Task MessageAgeReceived(IDialogContext context, IAwaitable<object> result)
+        public async Task MessageAgeReceived(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
             control = Namecontrolar(activity.Text);
@@ -141,7 +141,7 @@ namespace TuriBoBot.Dialogs
             }
         }
         
-        private async Task MessageBudgetReceived(IDialogContext context, IAwaitable<object> result)
+        public async Task MessageBudgetReceived(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
             control = Agecontrolar(activity.Text);
@@ -198,7 +198,7 @@ namespace TuriBoBot.Dialogs
             }
         }
 
-        private async Task MessagePurposeReceived(IDialogContext context, IAwaitable<object> result)
+        public async Task MessagePurposeReceived(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
             control = Budgetcontrolar(activity.Text);
@@ -276,7 +276,7 @@ namespace TuriBoBot.Dialogs
 
         }
 
-        private async Task MessageTemperatureReceived(IDialogContext context, IAwaitable<object> result)
+        public async Task MessageTemperatureReceived(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
             control = Temperaturecontrolar(activity.Text);
