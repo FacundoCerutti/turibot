@@ -43,6 +43,7 @@ namespace TuriBoBot.Model
             //Reglas
             // Edad/Presupuesto = Alcance
             // Muy joven
+            // Base de conocimiento
             Rules.Add(Rule.If(Age.Is(vyoung).And(Budget.Is(low))).Then(Reach.Is(national)));                    //rule1            
             Rules.Add(Rule.If(Age.Is(vyoung).And(Budget.Is(medium))).Then(Reach.Is(national)));                 //rule2
             Rules.Add(Rule.If(Age.Is(vyoung).And(Budget.Is(high))).Then(Reach.Is(latin)));                      //rule3
@@ -64,7 +65,7 @@ namespace TuriBoBot.Model
             Rules.Add(Rule.If(Age.Is(mature).And(Budget.Is(vhigh))).Then(Reach.Is(international)));             //rule16
             
             
-            //Adding the rules to the Fuzzy Engine
+            //Agrega las reglas al motor de fusificaación
             foreach(FuzzyRule rule in Rules)
             {
                 FuzzyEngine.Rules.Add(rule);               
@@ -73,7 +74,7 @@ namespace TuriBoBot.Model
 
        
 
-        
+        // Getter y Setter 
         public LinguisticVariable Budget { get => budget; set => budget = value; }
         public LinguisticVariable Age { get => age; set => age = value; }
         public IFuzzyEngine FuzzyEngine { get => fuzzyEngine; set => fuzzyEngine = value; }

@@ -40,6 +40,7 @@ namespace TuriBoBot.Model
 
             //Reglas
             //Proposito/Alcance = Subconjuntos
+            // Reglas que proporcionan la inferencia para los resultados
             Rules.Add(Rule.If(Purpose.Is(familiar).And(Reach.Is(national))).Then(Sublist.Is(conjunto1)));       //rule17
             Rules.Add(Rule.If(Purpose.Is(familiar).And(Reach.Is(latin))).Then(Sublist.Is(conjunto2)));          //rule18
             Rules.Add(Rule.If(Purpose.Is(familiar).And(Reach.Is(international))).Then(Sublist.Is(conjunto3)));  //rule19

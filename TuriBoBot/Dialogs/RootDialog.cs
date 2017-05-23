@@ -15,12 +15,15 @@ namespace TuriBoBot.Dialogs
         object respuesta2 = new object();
         object respuesta3 = new object();
         object respuesta4 = new object();
+        //Base de hechos
+        // Variables temporales que permiten guardar el contexto
         private double age = 0;
         private double budget = 0;
         private string pur = "";
         private string temp = "";
         private int control = 0;
 
+        // Respuestas defusificadas del sistema
         private string[] destinos = new string[33] {"Tafi del Valle","Mares del Sur","Rosario","Praya dos Ingleses",
                                             "Valparaiso","Punta del Este","Cartagena", "Camboriu","Orlando",
                                             "Miami","Bariloche","Mendoza","Caribe","Guayaquil","Islha do Mel",
@@ -28,6 +31,7 @@ namespace TuriBoBot.Dialogs
                                             "Egipto","Hawaii","Carlos Paz","Mar del Plata","Floreanopolis","Cancun",
                                             "Costa Rica","Las Vegas","Amsterdam","Tokyo","Australia"};
 
+        // Requerimiento del motor -> para que se pueda fusificar
         [NonSerialized()] private ControladorDifuso fuzzy;
         [NonSerialized()] private ControladorDifuso2 fuzzy2;
         [NonSerialized()] private ControladorDifuso3 fuzzy3;
