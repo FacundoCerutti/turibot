@@ -388,18 +388,16 @@ namespace TuriBoBot.Dialogs
                     case 1350:
                         respuesta4 = Destinos[29] + ", " + Destinos[32];
                         break;
-                    default:
-                        respuesta4 = "";
-                        break;
                 }
                 control = 0;
-                await context.PostAsync("Les recomendamos los siguientes destinos: " + respuesta4.ToString());
-                await context.PostAsync("Gracias por usar Turibot, que tenga un buen viaje y recuerde: " +
+                await context.PostAsync("Le recomendamos los siguientes destinos: " + respuesta4.ToString());
+                /*await context.PostAsync("Gracias por usar Turibot, que tenga un buen viaje y recuerde: " +
                                         "In my talons, I shape clay, crafting life forms as I please. If I wish, I can smash " +
                                         "it all. Around me is a burgeoning empire of steel. From my throne room, lines of power " +
                                         "careen into the skies of Earth. My whims will become lightning bolts that raze the mounds " +
                                         "of humanity. Out of the chaos, they will run and whimper, praying for me to end their " +
-                                        "tedious anarchy. I am drunk with this vision. God: the title suits me well.");
+                                        "tedious anarchy. I am drunk with this vision. God: the title suits me well.");*/
+                context.Wait(MessageRestartReceived);
             }
             if (control == 1)
             {
@@ -456,6 +454,21 @@ namespace TuriBoBot.Dialogs
                 context.Wait(MessageTemperatureReceived);
             }
 
+        }
+
+        //**********************************************************************
+        // ----------------------- REINICIAR BOT -------------------------------------
+        //****************************************************************
+
+
+        public async Task MessageRestartReceived(IDialogContext context, IAwaitable<object> result)
+        {
+            var activity = await result as Activity;
+            if (activity.Text.Equals("restart"))
+            {
+               // context.EndConversation(activity.Text);
+                context.Wait(MessageReceivedAsync);
+            }
         }
 
         public int Controlar(string values)
