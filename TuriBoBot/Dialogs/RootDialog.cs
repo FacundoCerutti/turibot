@@ -31,19 +31,53 @@ private string name = "";
         private int control = 0;
 
         // Respuestas defusificadas del sistema
-        private string[] destinos = new string[33] {"Tafi del Valle","Mares del Sur","Rosario","Praya dos Ingleses",
+        /*private string[] destinos = new string[33] {"Tafi del Valle","Mares del Sur","Rosario","Praya dos Ingleses",
                                             "Valparaiso","Punta del Este","Cartagena", "Camboriu","Orlando",
                                             "Miami","Bariloche","Mendoza","Caribe","Guayaquil","Islha do Mel",
                                             "Machu Pichu","Roma","Venecia","Paris","Valencia","Portugal","Grecia",
                                             "Egipto","Hawaii","Carlos Paz","Mar del Plata","Floreanopolis","Cancun",
-                                            "Costa Rica","Las Vegas","Amsterdam","Tokyo","Australia"};
-
+                                            "Costa Rica","Las Vegas","Amsterdam","Tokyo","Australia"};*/
+        private Destino[] destinos = {
+                new Destino("Tafi del Valle",-26.851975945944233 ,-65.71111467217486 ),
+                new Destino("Mar del Sur",-38.341162211004026 ,-57.99522928695682),
+                new Destino("Rosario",-32.94973412170926,-60.643268974719255),
+                new Destino("Praya dos Ingleses",-27.433058905678887,-48.39451121434019),
+                new Destino("Valparaiso",-33.04712394984877,-71.61270079075314),
+                new Destino("Punta del Este",-34.93660924934044 ,-54.92869676494137 ),
+                new Destino("Cartagena",10.390831615024997 ,-75.48121677175287),
+                new Destino("Camboriu",-26.99383781773793 , -48.63535161733398),
+                new Destino("Orlando", 28.53809132152661 ,-81.37965049743651),
+                new Destino("Miami",25.761021331096117 ,-80.19205767510374),
+                new Destino("Bariloche", -41.13367467729619, -71.31137579608152),
+                new Destino("Mendoza",-32.89026783069922 ,-68.84547283535159 ),
+                new Destino("Punta Cana",18.582944976844704 ,-68.39808664838557),
+                new Destino("Guayaquil", -2.16986698986024,-79.9199138987549),
+                new Destino("Islha do Mel",-25.515731076600932 , -48.33269297642824),
+                new Destino("Machu Pichu",-13.163141203713916 ,-72.54496289999997),
+                new Destino("Roma",41.902742 ,12.496242),
+                new Destino("Venecia",45.433776016477786 ,12.327938325351639),
+                new Destino("Paris", 48.85542056220146,2.345192532753355),
+                new Destino("Valencia",39.46701475595226 ,-0.371034483107342),
+                new Destino("Portugal", 38.712702401270796,-9.14286366823353),
+                new Destino("Grecia",37.974319357400795 ,23.73644296320502),
+                new Destino("Egipto",26.939078097403748,30.795659800000067),
+                new Destino("Hawaii", 20.47188350858674,-157.505),
+                new Destino("Carlos Paz", -31.41222809215237,-64.49973669999997),
+                new Destino("Mar del Plata",-38.01764738461685 ,-57.600534049999965),
+                new Destino("Floreanopolis", -27.614479856117843,-48.48282474999996),
+                new Destino("Cancun",21.121371172643965 ,-86.84931025000003),
+                new Destino("Costa Rica",9.633931465220899 ,-84.25418434999995),
+                new Destino("Las Vegas", 36.12519506431158,-115.17499999999995),
+                new Destino("Amsterdam",52.37464788349741 ,4.898614199999997),
+                new Destino("Tokyo",35.7076595041669 ,139.73150234936531),
+                new Destino("Australia",-24.72265917422125 ,133.08742210624996)
+                };
         // Requerimiento del motor -> para que se pueda fusificar
         [NonSerialized()] private ControladorDifuso fuzzy;
         [NonSerialized()] private ControladorDifuso2 fuzzy2;
         [NonSerialized()] private ControladorDifuso3 fuzzy3;
 
-        public string[] Destinos { get => destinos; set => destinos = value; }
+        public Destino[] Destinos { get => destinos; set => destinos = value; }
 
         public Task StartAsync(IDialogContext context)
         {
@@ -314,86 +348,86 @@ private string name = "";
                 switch (switchcondition)
                 {
                     case 50:
-                        respuesta4 = Destinos[0];
+                        respuesta4 = Destinos[0].Name;
                         break;
                     case 100:
-                        respuesta4 = Destinos[1] + ", " + Destinos[2];
+                        respuesta4 = Destinos[1].Name + ", " + Destinos[2].Name;
                         break;
                     case 150:
-                        respuesta4 = Destinos[1] + ", " + Destinos[2];
+                        respuesta4 = Destinos[1].Name + ", " + Destinos[2].Name;
                         break;
                     case 200:
-                        respuesta4 = Destinos[4];
+                        respuesta4 = Destinos[4].Name;
                         break;
                     case 250:
-                        respuesta4 = Destinos[4] + ", " + Destinos[5];
+                        respuesta4 = Destinos[4].Name + ", " + Destinos[5].Name;
                         break;
                     case 300:
-                        respuesta4 = Destinos[3] + ", " + Destinos[6] + ", " + Destinos[7];
+                        respuesta4 = Destinos[3].Name + ", " + Destinos[6].Name + ", " + Destinos[7].Name;
                         break;
                     case 350:
                         respuesta4 = "";
                         break;
                     case 400:
-                        respuesta4 = Destinos[8] + ", " + Destinos[9];
+                        respuesta4 = Destinos[8].Name + ", " + Destinos[9].Name;
                         break;
                     case 450:
-                        respuesta4 = Destinos[8] + ", " + Destinos[9];
+                        respuesta4 = Destinos[8].Name + ", " + Destinos[9].Name;
                         break;
                     case 500:
-                        respuesta4 = Destinos[10] + ", " + Destinos[11];
+                        respuesta4 = Destinos[10].Name + ", " + Destinos[11].Name;
                         break;
                     case 550:
-                        respuesta4 = Destinos[11] + ", " + Destinos[25];
+                        respuesta4 = Destinos[11].Name + ", " + Destinos[25].Name;
                         break;
                     case 600:
-                        respuesta4 = Destinos[25];
+                        respuesta4 = Destinos[25].Name;
                         break;
                     case 650:
-                        respuesta4 = Destinos[15];
+                        respuesta4 = Destinos[15].Name;
                         break;
                     case 700:
-                        respuesta4 = Destinos[14] + ", " + Destinos[15];
+                        respuesta4 = Destinos[14].Name + ", " + Destinos[15].Name;
                         break;
                     case 750:
-                        respuesta4 = Destinos[14] + ", " + Destinos[12] + ", " + Destinos[13];
+                        respuesta4 = Destinos[14].Name + ", " + Destinos[12].Name + ", " + Destinos[13].Name;
                         break;
                     case 800:
-                        respuesta4 = Destinos[16] + ", " + Destinos[17] + ", " + Destinos[18];
+                        respuesta4 = Destinos[16].Name + ", " + Destinos[17].Name + ", " + Destinos[18].Name;
                         break;
                     case 850:
-                        respuesta4 = Destinos[16] + ", " + Destinos[17] + ", " + Destinos[18] + ", " + Destinos[19] + ", " +
-                        Destinos[20] + ", " + Destinos[21] + ", " + Destinos[23];
+                        respuesta4 = Destinos[16].Name + ", " + Destinos[17].Name + ", " + Destinos[18].Name + ", " + Destinos[19].Name + ", " +
+                        Destinos[20].Name + ", " + Destinos[21].Name + ", " + Destinos[23].Name;
                         break;
                     case 900:
-                        respuesta4 = Destinos[22] + ", " + Destinos[19] + ", " + Destinos[20] + ", " + Destinos[23];
+                        respuesta4 = Destinos[22].Name + ", " + Destinos[19].Name + ", " + Destinos[20].Name + ", " + Destinos[23].Name;
                         break;
                     case 950:
-                        respuesta4 = Destinos[10];
+                        respuesta4 = Destinos[10].Name;
                         break;
                     case 1000:
-                        respuesta4 = Destinos[24] + ", " + Destinos[25];
+                        respuesta4 = Destinos[24].Name + ", " + Destinos[25].Name;
                         break;
                     case 1050:
-                        respuesta4 = Destinos[24] + ", " + Destinos[25];
+                        respuesta4 = Destinos[24].Name + ", " + Destinos[25].Name;
                         break;
                     case 1100:
-                        respuesta4 = Destinos[15];
+                        respuesta4 = Destinos[15].Name;
                         break;
                     case 1150:
-                        respuesta4 = Destinos[5] + ", " + Destinos[15];
+                        respuesta4 = Destinos[5].Name + ", " + Destinos[15].Name;
                         break;
                     case 1200:
-                        respuesta4 = Destinos[26] + ", " + Destinos[27] + ", " + Destinos[28];
+                        respuesta4 = Destinos[26].Name + ", " + Destinos[27].Name + ", " + Destinos[28].Name;
                         break;
                     case 1250:
-                        respuesta4 = Destinos[31] + ", " + Destinos[30];
+                        respuesta4 = Destinos[31].Name + ", " + Destinos[30].Name;
                         break;
                     case 1300:
-                        respuesta4 = Destinos[29] + ", " + Destinos[31] + ", " + Destinos[30];
+                        respuesta4 = Destinos[29].Name + ", " + Destinos[31].Name + ", " + Destinos[30].Name;
                         break;
                     case 1350:
-                        respuesta4 = Destinos[29] + ", " + Destinos[32];
+                        respuesta4 = Destinos[29].Name + ", " + Destinos[32].Name;
                         break;
                 }
                 control = 0;
@@ -404,7 +438,7 @@ private string name = "";
                                         "careen into the skies of Earth. My whims will become lightning bolts that raze the mounds " +
                                         "of humanity. Out of the chaos, they will run and whimper, praying for me to end their " +
                                         "tedious anarchy. I am drunk with this vision. God: the title suits me well.");*/
-                context.Wait(MessageRestartReceived);
+        context.Wait(MessageRestartReceived);
             }
             if (control == 1)
             {
@@ -556,33 +590,5 @@ private string name = "";
             }
             return Budgetcontrolar(values);
         }
-
-
-        /*private static IEnumerable<Destino> CreateCities()
-        {
-            var cities = new List<Destino>
-            {
-                new Destino("Birmingham", 52.486125, -1.890507),
-                new Destino("Bristol", 51.460852, -2.588139),
-                new Destino("London", 51.512161, -0.116215),
-                new Destino("Leeds", 53.803895, -1.549931),
-                new Destino("Manchester", 53.478239, -2.258549),
-                new Destino("Liverpool", 53.409532, -3.000126),
-                new Destino("Hull", 53.751959, -0.335941),
-                new Destino("Newcastle", 54.980766, -1.615849),
-                new Destino("Carlisle", 54.892406, -2.923222),
-                new Destino("Edinburgh", 55.958426, -3.186893),
-                new Destino("Glasgow", 55.862982, -4.263554),
-                new Destino("Cardiff", 51.488224, -3.186893),
-                new Destino("Swansea", 51.624837, -3.94495),
-                new Destino("Exeter", 50.726024, -3.543949),
-                new Destino("Falmouth", 50.152266, -5.065556),
-                new Destino("Canterbury", 51.289406, 1.075802)
-            };
-
-            return cities;
-        }/*
-
-
     }
 }
