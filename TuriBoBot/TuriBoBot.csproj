@@ -51,6 +51,9 @@
     <Reference Include="FLS, Version=1.1.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FLS.1.1.6.0\lib\net45\FLS.dll</HintPath>
     </Reference>
+    <Reference Include="GAF, Version=2.3.0.22457, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GAF.2.3.0\lib\net45\GAF.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bot.Builder, Version=3.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>$(SolutionDir)\packages\Microsoft.Bot.Builder.3.8.0\lib\net46\Microsoft.Bot.Builder.dll</HintPath>
     </Reference>
@@ -119,6 +122,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Model\Destino.cs" />
     <Compile Include="Model\ControladorDifuso.cs" />
     <Compile Include="Model\ControladorDifuso2.cs" />
     <Compile Include="Model\ControladorDifuso3.cs" />
