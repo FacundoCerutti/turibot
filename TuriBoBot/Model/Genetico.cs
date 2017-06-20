@@ -8,14 +8,37 @@ using GAF.Operators;
 
 namespace TuriBoBot.Model
 {
-    internal class Genetico
+    public class Genetico
     {
         private static List<Destino> _cities;
+        private static List<String> listaF;
+        private static List<object> atributosF;
+
+        public List<Destino> Cities { get => _cities; set => _cities = value; }
+        public List<String> ListaF { get => listaF; set => listaF = value; }
+        public List<object> AtributosF { get => atributosF; set => atributosF = value; }
+
+        public Genetico(List<Destino> destinos)
+        {
+            Cities = destinos;
+        }
+
+        public List<String> DevolverMejor()
+        {
+            return ListaF;
+        }
+        public List<object> DevolverAtributos()
+        {
+            return AtributosF;
+        }
+
         private static void Main(string[] args)
         {
 
+
+
             //get our cities
-            _cities = CreateCities().ToList();
+            //_cities = CreateCities().ToList();
 
             //Each Destino can be identified by an integer within the range 0-15
             //our chromosome is a special case as it needs to contain each Destino 
@@ -31,7 +54,7 @@ namespace TuriBoBot.Model
             {
 
                 var chromosome = new Chromosome();
-                for (var g = 0; g < 16; g++)
+                for (var g = 0; g < _cities.ToArray().Length; g++)
                 {
                     chromosome.Genes.Add(new Gene(g));
                 }
@@ -72,6 +95,7 @@ namespace TuriBoBot.Model
             var fittest = e.Population.GetTop(1)[0];
             foreach (var gene in fittest.Genes)
             {
+                listaF.Add(_cities[(int)gene.RealValue].Name);
                 Console.WriteLine(_cities[(int)gene.RealValue].Name);
             }
         }
@@ -80,10 +104,13 @@ namespace TuriBoBot.Model
         {
             var fittest = e.Population.GetTop(1)[0];
             var distanceToTravel = CalculateDistance(fittest);
+            atributosF.Add(e.Generation);
+            atributosF.Add(fittest.Fitness);
+            atributosF.Add(distanceToTravel);
             Console.WriteLine("Generation: {0}, Fitness: {1}, Distance: { 2}", e.Generation, fittest.Fitness, distanceToTravel);
         }
 
-        private static IEnumerable<Destino> CreateCities()
+        /*private static IEnumerable<Destino> CreateCities()
         {
             var cities = new List<Destino>
             {
@@ -120,7 +147,7 @@ namespace TuriBoBot.Model
             };
 
             return cities;
-        }
+        }*/
 
         public static double CalculateFitness(Chromosome chromosome)
         {

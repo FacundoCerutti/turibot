@@ -126,6 +126,7 @@
     <Compile Include="Model\ControladorDifuso.cs" />
     <Compile Include="Model\ControladorDifuso2.cs" />
     <Compile Include="Model\ControladorDifuso3.cs" />
+    <Compile Include="Model\Genetico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
