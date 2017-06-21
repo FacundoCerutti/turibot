@@ -469,13 +469,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 0)
+                            foreach(Destino d in Destinos)
+                            { 
+                            if (!Destinos[nro].Equals(d))
                             {
                                 respuesta4.Add(Destinos[nro]);
                             }
                             else
                             {
                                 i--;
+                            }
                             }
                         }
 
@@ -488,13 +491,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 1 || nro != 2)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
 
@@ -506,13 +512,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if(nro!=1 || nro != 2)
-                            { 
-                            respuesta4.Add(Destinos[nro]);
-                            }
-                            else
+                            foreach (Destino d in Destinos)
                             {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                 
@@ -523,13 +532,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 4)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
 
@@ -541,13 +553,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 4 || nro != 5)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
 
@@ -560,13 +575,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 3 || nro != 6 || nro!=7)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -575,13 +593,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 1 || nro != 2)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -592,13 +613,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 8 || nro != 9)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -609,13 +633,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 8 || nro != 9)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -626,13 +653,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 10 || nro != 11)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -643,13 +673,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 11 || nro != 25)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -659,13 +692,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 25)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -675,13 +711,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 15)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -692,13 +731,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 14 || nro != 15)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -710,13 +752,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 14 || nro != 12 || nro!=13)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -728,13 +773,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 16 || nro != 17 || nro != 18)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -750,13 +798,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 16 || nro != 17 || nro != 18 || nro != 19 || nro != 20 || nro != 21 || nro != 23)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -769,13 +820,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 19 || nro != 20 || nro != 22 || nro != 23)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -802,13 +856,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 24 || nro != 25)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -819,13 +876,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 24 || nro != 25)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -835,13 +895,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 15)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -852,13 +915,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 5 || nro != 15)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -870,13 +936,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 26 || nro != 27 || nro != 28)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -887,13 +956,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 30 || nro != 31)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -905,13 +977,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 29 || nro != 30 || nro != 31)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
@@ -922,13 +997,16 @@ namespace TuriBoBot.Dialogs
                         {
                             Random rnd = new Random();
                             int nro = rnd.Next(0, 141);
-                            if (nro != 29 || nro != 32)
+                            foreach (Destino d in Destinos)
                             {
-                                respuesta4.Add(Destinos[nro]);
-                            }
-                            else
-                            {
-                                i--;
+                                if (!Destinos[nro].Equals(d))
+                                {
+                                    respuesta4.Add(Destinos[nro]);
+                                }
+                                else
+                                {
+                                    i--;
+                                }
                             }
                         }
                         break;
