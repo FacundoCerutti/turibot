@@ -26,6 +26,9 @@ namespace TuriBoBot.Dialogs
         private double budget = 0;
         private string pur = "";
         private string temp = "";
+        private double mut = 0;
+        private int terminflag = 0;
+        private int termin = 0;        
         private int control = 0;
 
         // Respuestas defusificadas del sistema
@@ -382,9 +385,9 @@ namespace TuriBoBot.Dialogs
                 }
                 Double reach = Double.Parse(respuesta1.ToString());
                 respuesta2 = fuzzy2.FuzzyEngine.Defuzzify(new { purpose, reach });
-                await context.PostAsync("Como le gusta el clima?");
+                await context.PostAsync("Que tan mutable es la poblacion?");
                 control = 0;
-                context.Wait(MessageTemperatureReceived);
+                context.Wait(MessageMutReceived);
             }
             if (control == 1)
             {
@@ -435,6 +438,47 @@ namespace TuriBoBot.Dialogs
                 context.Wait(MessagePurposeReceived);
             }
 
+        }
+
+        public async Task MessageMutReceived(IDialogContext context, IAwaitable<object> result)
+        {
+            var activity = await result as Activity;
+            mut = Double.Parse(activity.Text);
+            await context.PostAsync("Como quiere que corte?");
+            context.Wait(MessageTerminateReceived);
+        }
+
+        public async Task MessageTerminateReceived(IDialogContext context, IAwaitable<object> result)
+        {
+            var activity = await result as Activity;
+            if(activity.Text.Contains("tiempo"))
+            {
+                terminflag = 1;
+                await context.PostAsync("Cuanto tiempo correra...?");
+                context.Wait(MessageTerminateFlag1Received);
+            }
+            if(activity.Text.Contains("corridas"))
+            {  
+                terminflag = 2;
+                await context.PostAsync("Cuantas corridas quiere...?");
+                context.Wait(MessageTerminateFlag2Received);
+            }           
+        }
+
+        public async Task MessageTerminateFlag1Received(IDialogContext context, IAwaitable<object> result)
+        {
+            var activity = await result as Activity;
+            termin = Double.Parse(activity.Text);
+            await context.PostAsync("Como le gusta el clima?");
+            context.Wait(MessageTemperatureReceived);
+        }
+
+        public async Task MessageTerminateFlag2Received(IDialogContext context, IAwaitable<object> result)
+        {
+            var activity = await result as Activity;
+            termin = Double.Parse(activity.Text);
+            await context.PostAsync("Como le gusta el clima?");
+            context.Wait(MessageTemperatureReceived);
         }
 
         public async Task MessageTemperatureReceived(IDialogContext context, IAwaitable<object> result)
@@ -1013,7 +1057,7 @@ namespace TuriBoBot.Dialogs
                 }
                 control = 0;
                 try { 
-                Genetico genetics = new Genetico(respuesta4);
+                Genetico genetics = new Genetico(respuesta4,mut,terminflag,termin);
                 await context.PostAsync("Su ruta ideal es: ");
                 foreach (string s in genetics.ListaF)
                 {

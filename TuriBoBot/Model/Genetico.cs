@@ -5,6 +5,7 @@ using System.Web;
 using GAF;
 using GAF.Extensions;
 using GAF.Operators;
+using System.Diagnostics;
 
 namespace TuriBoBot.Model
 {
@@ -13,14 +14,22 @@ namespace TuriBoBot.Model
         private List<Destino> cities = new List<Destino>();
         private List<String> listaF = new List<string>();
         private List<object> atributosF = new List<object>();
+        private Double mutationrate = 0;
+        private int terminateflag = 0;
+        private int terminatevalue = 0;
 
         public List<Destino> Cities { get => cities; set => cities = value; }
         public List<String> ListaF { get => listaF; set => listaF = value; }
         public List<object> AtributosF { get => atributosF; set => atributosF = value; }
+        public Double Mutationrate { get => mutationrate; set => mutationrate = value; }
+        public int Terminateflag { get => mutationrate; set => mutationrate = value; }
+        public int Terminatevalue { get => mutationrate; set => mutationrate = value; }
 
-        public Genetico(List<Destino> destinos)
+        public Genetico(List<Destino> destinos,Double mutation,int terminflag,int termin)
         {
             Cities = destinos;
+            Mutationrate = mutation;
+            Terminateflag = terminflag;
             var population = new Population();
             for (var p = 0; p < 100; p++)
             {
@@ -38,7 +47,7 @@ namespace TuriBoBot.Model
             {
                 CrossoverType = CrossoverType.DoublePointOrdered
             };
-            var mutate = new SwapMutate(0.02);
+            var mutate = new SwapMutate(Mutationrate/100);
             var ga = new GeneticAlgorithm(population, CalculateFitness);
             //ga.OnGenerationComplete += ga_OnGenerationComplete;
             //ga.OnRunComplete += ga_OnRunComplete;
@@ -115,10 +124,19 @@ namespace TuriBoBot.Model
 
             return distanceToTravel;
         }
-
-        public bool Terminate(Population population,int currentGeneration, long currentEvaluation)
+        
+        public bool Terminate(Population population,int currentGeneration, long currentEvaluation,int terminflag,int terminvalue)
         {
-            return currentGeneration < 400;
+            if(Terminateflag==1)
+            {
+                Stopwatch sw = Stopwatch.StartNew();
+                return sw.Elapsed.TotalMilliseconds>(Terminatevalue*1000);
+            }
+            if(Terminateflag==2)
+            {
+                return currentGeneration > Terminatevalue;
+            }
+            return currentGeneration > 400;            
         }
     }
 }
