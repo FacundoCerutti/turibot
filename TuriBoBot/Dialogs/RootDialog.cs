@@ -38,60 +38,53 @@ namespace TuriBoBot.Dialogs
 
 
         private List<Destino> respuesta4 = new List<Destino>();
-        private List<string> mejor = new List<string>();
-        private List<object> atributos = new List<object>();
-
-
-
-        public List<Destino> Respuesta4 { get => respuesta4; set => respuesta4 = value; }
-        public List<string> Mejor { get => mejor; set => mejor = value; }
-        public List<object> Atributos { get => atributos; set => atributos = value; }
+        public List<Destino> Respuesta4 { get => respuesta4; set => respuesta4 = value; }    
 
 
         private Destino[] destinos = {
 
                 new Destino("Tafi del Valle",-26.851975945944233 ,-65.71111467217486), //0
-                new Destino("Mar del Sur",-38.341162211004026 ,-57.99522928695682), //2
-                new Destino("Rosario",-32.94973412170926,-60.643268974719255), //3
-                new Destino("Praia dos Ingleses",-27.433058905678887,-48.39451121434019), //4
-                new Destino("Valparaiso",-33.04712394984877,-71.61270079075314), //5
-                new Destino("Punta del Este",-34.93660924934044 ,-54.92869676494137 ), //6
-                new Destino("Cartagena",10.390831615024997 ,-75.48121677175287), //7
-                new Destino("Camboriu",-26.99383781773793 , -48.63535161733398), //8
-                new Destino("Orlando", 28.53809132152661 ,-81.37965049743651), //9
-                new Destino("Miami",25.761021331096117 ,-80.19205767510374), //10
-                new Destino("Bariloche", -41.13367467729619, -71.31137579608152), //11
-                new Destino("Mendoza",-32.89026783069922 ,-68.84547283535159 ), //12
-                new Destino("Punta Cana",18.582944976844704 ,-68.39808664838557), //13
-                new Destino("Guayaquil", -2.16986698986024,-79.9199138987549), //14
-                new Destino("Ilha do Mel",-25.515731076600932 , -48.33269297642824), //15
-                new Destino("Machu Pichu",-13.163141203713916 ,-72.54496289999997), //16
-                new Destino("Roma",41.902742 ,12.496242), //17
-                new Destino("Venecia",45.433776016477786 ,12.327938325351639), //18
-                new Destino("Paris", 48.85542056220146,2.345192532753355), //19
-                new Destino("Valencia",39.46701475595226 ,-0.371034483107342), //20
-                new Destino("Portugal", 38.712702401270796,-9.14286366823353), //21
-                new Destino("Grecia",37.974319357400795 ,23.73644296320502), //22
-                new Destino("Egipto",26.939078097403748,30.795659800000067), //23
-                new Destino("Hawaii", 20.47188350858674,-157.505),  //24
-                new Destino("Carlos Paz", -31.41222809215237,-64.49973669999997), //25
-                new Destino("Mar del Plata",-38.01764738461685 ,-57.600534049999965), //26
-                new Destino("Florianopolis", -27.614479856117843,-48.48282474999996), //27
-                new Destino("Cancun",21.121371172643965 ,-86.84931025000003), //28
-                new Destino("Costa Rica",9.633931465220899 ,-84.25418434999995), //29
-                new Destino("Las Vegas", 36.12519506431158,-115.17499999999995), //30
-                new Destino("Amsterdam",52.37464788349741 ,4.898614199999997), //31
-                new Destino("Tokyo",35.7076595041669 ,139.73150234936531), //32
-                new Destino("Australia",-24.72265917422125 ,133.08742210624996), //33
-                new Destino("Salta",-24.786047683039044 ,-65.42148768167725), //34
-                new Destino("San Salvador deJujuy",-24.187594772531707,-57.99522928695682), //35
-                new Destino("Pumamarca",-23.747368495757712,-65.49558444428713), //36
-                new Destino("Gral Guemes",-24.6674657111551 ,-65.04445834565432), //37
-                new Destino("Villa Gesell",-37.26077166271962 , -56.97232467846674), //38
-                new Destino("Necochea",-38.55491790589638,-58.73876668955076), //39
-                new Destino("La Habana",23.109212553455293 ,-82.35730248203123 ), //40
-                new Destino("Varadero",23.179927280558548 ,-81.19275170078123), //41
-                new Destino("Bahamas", 24.663164421891352, -77.92157250156248), //42
+                new Destino("Mar del Sur",-38.341162211004026 ,-57.99522928695682), //1
+                new Destino("Rosario",-32.94973412170926,-60.643268974719255), //2
+                new Destino("Praia dos Ingleses",-27.433058905678887,-48.39451121434019), //3
+                new Destino("Valparaiso",-33.04712394984877,-71.61270079075314), //4
+                new Destino("Punta del Este",-34.93660924934044 ,-54.92869676494137 ), //5
+                new Destino("Cartagena",10.390831615024997 ,-75.48121677175287), //6
+                new Destino("Camboriu",-26.99383781773793 , -48.63535161733398), //7
+                new Destino("Orlando", 28.53809132152661 ,-81.37965049743651), //8
+                new Destino("Miami",25.761021331096117 ,-80.19205767510374), //9
+                new Destino("Bariloche", -41.13367467729619, -71.31137579608152), //10
+                new Destino("Mendoza",-32.89026783069922 ,-68.84547283535159 ), //11
+                new Destino("Punta Cana",18.582944976844704 ,-68.39808664838557), //12
+                new Destino("Guayaquil", -2.16986698986024,-79.9199138987549), //13
+                new Destino("Ilha do Mel",-25.515731076600932 , -48.33269297642824), //14
+                new Destino("Machu Pichu",-13.163141203713916 ,-72.54496289999997), //15
+                new Destino("Roma",41.902742 ,12.496242), //16
+                new Destino("Venecia",45.433776016477786 ,12.327938325351639), //17
+                new Destino("Paris", 48.85542056220146,2.345192532753355), //18
+                new Destino("Valencia",39.46701475595226 ,-0.371034483107342), //19
+                new Destino("Portugal", 38.712702401270796,-9.14286366823353), //20
+                new Destino("Grecia",37.974319357400795 ,23.73644296320502), //21
+                new Destino("Egipto",26.939078097403748,30.795659800000067), //22
+                new Destino("Hawaii", 20.47188350858674,-157.505),  //23
+                new Destino("Carlos Paz", -31.41222809215237,-64.49973669999997), //24
+                new Destino("Mar del Plata",-38.01764738461685 ,-57.600534049999965), //25
+                new Destino("Florianopolis", -27.614479856117843,-48.48282474999996), //26
+                new Destino("Cancun",21.121371172643965 ,-86.84931025000003), //27
+                new Destino("Costa Rica",9.633931465220899 ,-84.25418434999995), //28
+                new Destino("Las Vegas", 36.12519506431158,-115.17499999999995), //29
+                new Destino("Amsterdam",52.37464788349741 ,4.898614199999997), //30
+                new Destino("Tokyo",35.7076595041669 ,139.73150234936531), //31
+                new Destino("Australia",-24.72265917422125 ,133.08742210624996), //32
+                new Destino("Salta",-24.786047683039044 ,-65.42148768167725), //33
+                new Destino("San Salvador deJujuy",-24.187594772531707,-57.99522928695682), //34
+                new Destino("Pumamarca",-23.747368495757712,-65.49558444428713), //35
+                new Destino("Gral Guemes",-24.6674657111551 ,-65.04445834565432), //36
+                new Destino("Villa Gesell",-37.26077166271962 , -56.97232467846674), //37
+                new Destino("Necochea",-38.55491790589638,-58.73876668955076), //38
+                new Destino("La Habana",23.109212553455293 ,-82.35730248203123 ), //39
+                new Destino("Varadero",23.179927280558548 ,-81.19275170078123), //40
+                new Destino("Bahamas", 24.663164421891352, -77.92157250156248), //41
                 new Destino("Jamaica",18.115996789211756,-77.27600254999999), //43
                 new Destino("Texas",31.320770908156707 , -100.07666699999999), //44
                 new Destino("Madrid",40.43807216375375,-3.6795366500000455), //45
@@ -475,7 +468,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 0)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -494,7 +487,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 1 || nro != 2)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -512,7 +505,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if(nro!=1 || nro != 2)
                             { 
                             respuesta4.Add(Destinos[nro]);
@@ -529,7 +522,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 4)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -547,7 +540,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 4 || nro != 5)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -566,7 +559,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 3 || nro != 6 || nro!=7)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -581,7 +574,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 1 || nro != 2)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -598,7 +591,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 8 || nro != 9)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -615,7 +608,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 8 || nro != 9)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -632,7 +625,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 10 || nro != 11)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -649,7 +642,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 11 || nro != 25)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -665,7 +658,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 25)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -681,7 +674,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 15)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -698,7 +691,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 14 || nro != 15)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -716,7 +709,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 14 || nro != 12 || nro!=13)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -734,7 +727,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 16 || nro != 17 || nro != 18)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -756,7 +749,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 16 || nro != 17 || nro != 18 || nro != 19 || nro != 20 || nro != 21 || nro != 23)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -775,7 +768,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 19 || nro != 20 || nro != 22 || nro != 23)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -791,7 +784,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 10)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -808,7 +801,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 24 || nro != 25)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -825,7 +818,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 24 || nro != 25)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -841,7 +834,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 15)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -858,7 +851,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 5 || nro != 15)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -876,7 +869,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 26 || nro != 27 || nro != 28)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -893,7 +886,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 30 || nro != 31)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -911,7 +904,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 29 || nro != 30 || nro != 31)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -928,7 +921,7 @@ namespace TuriBoBot.Dialogs
                         for (int i = 0; i <= 19; i++)
                         {
                             Random rnd = new Random();
-                            int nro = rnd.Next(0, 143);
+                            int nro = rnd.Next(0, 141);
                             if (nro != 29 || nro != 32)
                             {
                                 respuesta4.Add(Destinos[nro]);
@@ -941,16 +934,24 @@ namespace TuriBoBot.Dialogs
                         break;
                 }
                 control = 0;
-
+                try { 
                 Genetico genetics = new Genetico(respuesta4);
-                Mejor = genetics.DevolverMejor();
-                Atributos = genetics.DevolverAtributos();
-                
-
-
-                await context.PostAsync("Su ruta ideal es: " + Mejor.ToString());
-                await context.PostAsync("La generacion, Fitness y Distancia son: "+ Atributos.ToString());
+                await context.PostAsync("Su ruta ideal es: ");
+                foreach (string s in genetics.ListaF)
+                {
+                    await context.PostAsync(s);
+                }
+                await context.PostAsync("La Fitness y Distancia son: ");
+                foreach (object o in genetics.AtributosF)
+                {
+                    await context.PostAsync(o.ToString());
+                }                
                 context.Wait(MessageRestartReceived);
+                }
+                catch(Exception e)
+                {
+                    await context.PostAsync(e.ToString());
+                }
             }
             if (control == 1)
             {
