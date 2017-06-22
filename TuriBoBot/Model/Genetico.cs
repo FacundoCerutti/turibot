@@ -11,26 +11,29 @@ namespace TuriBoBot.Model
 {
     public class Genetico
     {
+        private Population population = new Population();
         private List<Destino> cities = new List<Destino>();
         private List<String> listaF = new List<string>();
         private List<object> atributosF = new List<object>();
         private Double mutationrate = 0;
-        private int terminateflag = 0;
-        private int terminatevalue = 0;
+        private int terminateflag;
+        private int terminatevalue;
 
+        public Population Population { get => population; set => population = value; }
         public List<Destino> Cities { get => cities; set => cities = value; }
         public List<String> ListaF { get => listaF; set => listaF = value; }
         public List<object> AtributosF { get => atributosF; set => atributosF = value; }
         public Double Mutationrate { get => mutationrate; set => mutationrate = value; }
-        public int Terminateflag { get => mutationrate; set => mutationrate = value; }
-        public int Terminatevalue { get => mutationrate; set => mutationrate = value; }
+        public int Terminateflag { get => terminateflag; set => terminateflag = value; }
+        public int Terminatevalue { get => terminatevalue; set => terminatevalue = value; }
 
         public Genetico(List<Destino> destinos,Double mutation,int terminflag,int termin)
         {
             Cities = destinos;
             Mutationrate = mutation;
             Terminateflag = terminflag;
-            var population = new Population();
+            Terminatevalue = termin;
+            
             for (var p = 0; p < 100; p++)
             {
 
@@ -40,8 +43,9 @@ namespace TuriBoBot.Model
                     chromosome.Genes.Add(new Gene(g));
                 }
                 chromosome.Genes.ShuffleFast();
-                population.Solutions.Add(chromosome);
+                Population.Solutions.Add(chromosome);
             }
+
             var elite = new Elite(5);
             var crossover = new Crossover(0.8)
             {
@@ -53,7 +57,7 @@ namespace TuriBoBot.Model
             //ga.OnRunComplete += ga_OnRunComplete;
             ga.Operators.Add(elite);
             ga.Operators.Add(crossover);
-            ga.Operators.Add(mutate);
+            ga.Operators.Add(mutate);            
             ga.Run(Terminate);
             var fittest = ga.Population.GetTop(1)[0];
             foreach (var gene in fittest.Genes)
@@ -124,17 +128,19 @@ namespace TuriBoBot.Model
 
             return distanceToTravel;
         }
-        
-        public bool Terminate(Population population,int currentGeneration, long currentEvaluation,int terminflag,int terminvalue)
+                
+        private bool Terminate(Population population,int currentGeneration, long currentEvaluation)
         {
-            if(Terminateflag==1)
+            int terminflag = Terminateflag;
+            int terminvalue = Terminatevalue;
+            if(terminflag==1)
             {
                 Stopwatch sw = Stopwatch.StartNew();
-                return sw.Elapsed.TotalMilliseconds>(Terminatevalue*1000);
+                return sw.Elapsed.TotalMilliseconds>(terminvalue*1000);
             }
-            if(Terminateflag==2)
+            if(terminflag==2)
             {
-                return currentGeneration > Terminatevalue;
+                return currentGeneration > terminvalue;
             }
             return currentGeneration > 400;            
         }
