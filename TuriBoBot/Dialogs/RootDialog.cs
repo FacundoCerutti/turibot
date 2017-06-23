@@ -386,7 +386,7 @@ namespace TuriBoBot.Dialogs
         public async Task MessageTerminateFlag1Received(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
-            termin = Double.Parse(activity.Text);
+            termin = Int32.Parse(activity.Text);
             await context.PostAsync("Como le gusta el clima?");
             context.Wait(MessageTemperatureReceived);
         }
@@ -394,7 +394,7 @@ namespace TuriBoBot.Dialogs
         public async Task MessageTerminateFlag2Received(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
-            termin = Double.Parse(activity.Text);
+            termin = Int32.Parse(activity.Text);
             await context.PostAsync("Como le gusta el clima?");
             context.Wait(MessageTemperatureReceived);
         }
