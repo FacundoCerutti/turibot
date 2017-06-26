@@ -40,7 +40,7 @@ namespace TuriBoBot.Model
                 var chromosome = new Chromosome();
                 for (var g = 1; g <= Cities.ToArray().Length; g++)
                 {
-                    chromosome.Genes.Insert(g,new Gene(g));
+                    chromosome.Genes.Add(new Gene(g));
                 }
                 chromosome.Genes.ShuffleFast();
                 Destino tuc=new Destino("San Miguel de Tucuman", -26.817729748348082,-65.20398984827273);
@@ -56,11 +56,8 @@ namespace TuriBoBot.Model
                 foreach(Gene g in chromosome.Genes)
                 {
                     individuos.Add(g);
-                }
-                foreach(Gene g in chromosome.Genes)
-                {
                     chromosome.Genes.Remove(g);
-                }
+                }                
                 foreach(Gene g in individuos)
                 {
                     chromosome.Genes.Add(g);
