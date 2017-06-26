@@ -38,11 +38,18 @@ namespace TuriBoBot.Model
             {
 
                 var chromosome = new Chromosome();
-                for (var g = 0; g < Cities.ToArray().Length; g++)
+                for (var g = 1; g <= Cities.ToArray().Length; g++)
                 {
-                    chromosome.Genes.Add(new Gene(g));
+                    chromosome.Genes.Insert(g,new Gene(g));
                 }
                 chromosome.Genes.ShuffleFast();
+                Destino tuc=new Destino("San Miguel de Tucuman", -26.817729748348082,-65.20398984827273);
+                Destino o = Cities.First();
+                Cities.Add(o);
+                Cities.Insert(0, tuc);
+                Gene gen = chromosome.Genes.First();
+                chromosome.Genes.Add(gen);
+                chromosome.Genes.Insert(0, new Gene(0));
                 Population.Solutions.Add(chromosome);
             }
 
