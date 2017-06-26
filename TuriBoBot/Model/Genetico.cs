@@ -44,12 +44,27 @@ namespace TuriBoBot.Model
                 }
                 chromosome.Genes.ShuffleFast();
                 Destino tuc=new Destino("San Miguel de Tucuman", -26.817729748348082,-65.20398984827273);
-                Destino o = Cities.First();
-                Cities.Add(o);
-                Cities.Insert(0, tuc);
-                Gene gen = chromosome.Genes.First();
-                chromosome.Genes.Add(gen);
-                chromosome.Genes.Insert(0, new Gene(0));
+                List<Destino> ciudades = new List<Destino>();
+                ciudades.Add(tuc);
+                foreach(Destino d in Cities)
+                {
+                    ciudades.Add(d);
+                }
+                Cities = ciudades;
+                List<Gene> individuos = new List<Gene>();
+                individuos.Add(new Gene(0));
+                foreach(Gene g in chromosome.Genes)
+                {
+                    individuos.Add(g);
+                }
+                foreach(Gene g in chromosome.Genes)
+                {
+                    chromosome.Genes.Remove(g);
+                }
+                foreach(Gene g in individuos)
+                {
+                    chromosome.Genes.Add(g);
+                }
                 Population.Solutions.Add(chromosome);
             }
 
